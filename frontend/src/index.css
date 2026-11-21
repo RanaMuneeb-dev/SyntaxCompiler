@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── DARK THEME (default) ─────────────────────────────────────── */
+:root {
+  --bg:          #060810;
+  --bg2:         #0b0f1a;
+  --bg3:         #0f1525;
+  --bg4:         #131929;
+  --glass:       rgba(255,255,255,0.04);
+  --glass2:      rgba(255,255,255,0.07);
+  --glass3:      rgba(255,255,255,0.11);
+  --border:      rgba(255,255,255,0.08);
+  --border2:     rgba(255,255,255,0.14);
+  --border3:     rgba(255,255,255,0.22);
+
+  --cyan:        #00f5ff;
+  --cyan-dim:    rgba(0,245,255,0.10);
+  --cyan-glow:   0 0 24px rgba(0,245,255,0.35), 0 0 60px rgba(0,245,255,0.12);
+  --violet:      #a855f7;
+  --violet-dim:  rgba(168,85,247,0.12);
+  --violet-glow: 0 0 24px rgba(168,85,247,0.35);
+  --green:       #00ff9d;
+  --green-dim:   rgba(0,255,157,0.10);
+  --green-glow:  0 0 16px rgba(0,255,157,0.3);
+  --red:         #ff4466;
+  --red-dim:     rgba(255,68,102,0.10);
+  --amber:       #ffb800;
+  --orange:      #ff7733;
+
+  --text:        #e8edf8;
+  --text2:       #9ba8c4;
+  --muted:       #4a5578;
+  --muted2:      #2e3a52;
+
+  --accent:      var(--cyan);
+  --mono:        'JetBrains Mono', 'Fira Code', monospace;
+  --display:     'Oxanium', sans-serif;
+
+  --topbar-h:    52px;
+  --scrollbar-w: 4px;
+
+  color-scheme: dark;
+}
+
+/* ── LIGHT THEME ──────────────────────────────────────────────── */
+:root.light {
+  --bg:          #eef1f8;
+  --bg2:         #f8f9fc;
+  --bg3:         #edf0f7;
+  --bg4:         #e4e8f2;
+  --glass:       rgba(0,0,0,0.03);
+  --glass2:      rgba(0,0,0,0.05);
+  --glass3:      rgba(0,0,0,0.09);
+  --border:      rgba(0,0,0,0.09);
+  --border2:     rgba(0,0,0,0.15);
+  --border3:     rgba(0,0,0,0.24);
+
+  --cyan:        #0066dd;
+  --cyan-dim:    rgba(0,102,221,0.09);
+  --cyan-glow:   0 0 16px rgba(0,102,221,0.2);
+  --violet:      #7c3aed;
+  --violet-dim:  rgba(124,58,237,0.08);
+  --violet-glow: 0 0 16px rgba(124,58,237,0.2);
+  --green:       #007a4d;
+  --green-dim:   rgba(0,122,77,0.10);
+  --green-glow:  0 0 12px rgba(0,122,77,0.2);
+  --red:         #cc2244;
+  --red-dim:     rgba(204,34,68,0.09);
+  --amber:       #a06000;
+  --orange:      #c05000;
+
+  --text:        #0f172a;
+  --text2:       #4b5a7a;
+  --muted:       #8896b3;
+  --muted2:      #c8d0e0;
+
+  color-scheme: light;
+}
+
+/* ── BASE ─────────────────────────────────────────────────────── */
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* ── SCROLLBARS ───────────────────────────────────────────────── */
+::-webkit-scrollbar              { width: var(--scrollbar-w); height: var(--scrollbar-w); }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: var(--border2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--border3); }
+
+/* ── GLOBAL BUTTON RESET ──────────────────────────────────────── */
+button { cursor: pointer; font-family: var(--display); }
+
+/* ── TRANSITIONS ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+/* Exclude transforms and layout from global transition */
+svg, canvas, textarea { transition: none !important; }
